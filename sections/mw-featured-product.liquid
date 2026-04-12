@@ -1,0 +1,324 @@
+{% comment %}
+  MW Featured Product - Figma Desktop / Slice / Featured Product (1128x601)
+  Three-column: lifestyle image, product tile, description panel
+{% endcomment %}
+
+<section class="mw-fp">
+  <div class="mw-fp__container">
+    <div class="mw-fp__grid">
+      {%- comment -%} Lifestyle Image {%- endcomment -%}
+      <div class="mw-fp__lifestyle">
+        {% if section.settings.lifestyle_image != blank %}
+          {{
+            section.settings.lifestyle_image
+            | image_url: width: section.settings.lifestyle_image.width
+            | image_tag:
+              sizes: '(min-width: 750px) 748px, 100vw',
+              widths: '375,748,1000,1496',
+              loading: 'lazy',
+              class: 'mw-fp__lifestyle-img',
+              alt: section.settings.lifestyle_image.alt
+          }}
+        {% else %}
+          <div class="mw-fp__lifestyle-placeholder"></div>
+        {% endif %}
+      </div>
+
+      {%- comment -%} Product Tile {%- endcomment -%}
+      <div class="mw-fp__product-tile">
+        {% if section.settings.product_image != blank %}
+          <div class="mw-fp__product-image">
+            {{
+              section.settings.product_image
+              | image_url: width: section.settings.product_image.width
+              | image_tag:
+                sizes: '(min-width: 750px) 340px, 100vw',
+                widths: '340,375,680',
+                loading: 'lazy',
+                class: 'mw-fp__product-img',
+                alt: section.settings.product_title
+            }}
+          </div>
+        {% endif %}
+        <div class="mw-fp__product-info">
+          {% if section.settings.product_title != blank %}
+            <h3 class="mw-fp__product-title">{{ section.settings.product_title | escape }}</h3>
+          {% endif %}
+          {% if section.settings.product_colors != blank %}
+            <p class="mw-fp__product-colors">{{ section.settings.product_colors | escape }}</p>
+          {% endif %}
+          {% if section.settings.product_rating != blank %}
+            <div class="mw-fp__product-rating">
+              <img src="{{ '4-stars-and-up.svg' | asset_url }}" alt="Rating" width="82" height="14" loading="lazy">
+              <span class="mw-fp__rating-count">{{ section.settings.product_rating | escape }}</span>
+            </div>
+          {% endif %}
+          {% if section.settings.product_price != blank %}
+            <p class="mw-fp__product-price">{{ section.settings.product_price | escape }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      {%- comment -%} Description Panel {%- endcomment -%}
+      <div class="mw-fp__description">
+        <div class="mw-fp__description-content">
+          {% if section.settings.feature_heading != blank %}
+            <h2 class="mw-fp__feature-heading mw-heading mw-heading--sm">
+              {{ section.settings.feature_heading | escape }}
+            </h2>
+          {% endif %}
+          {% if section.settings.feature_description != blank %}
+            <p class="mw-fp__feature-text">{{ section.settings.feature_description | escape }}</p>
+          {% endif %}
+        </div>
+        {% if section.settings.button_text != blank %}
+          <a href="{{ section.settings.button_url }}" class="mw-btn mw-btn--navy">
+            {{ section.settings.button_text | escape }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+.mw-fp {
+  padding-block: 48px;
+}
+
+.mw-fp__container {
+  max-width: 1128px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.mw-fp__grid {
+  display: grid;
+  grid-template-columns: 748fr 340fr;
+  gap: 0;
+  min-height: 601px;
+}
+
+.mw-fp__lifestyle {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+.mw-fp__lifestyle-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mw-fp__lifestyle-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background: #F7F7F7;
+}
+
+.mw-fp__product-tile {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.mw-fp__product-image {
+  flex: 1;
+}
+
+.mw-fp__product-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mw-fp__product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 0;
+}
+
+.mw-fp__product-title {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  color: #001237;
+  margin: 0;
+}
+
+.mw-fp__product-colors {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #001237;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.mw-fp__product-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mw-fp__rating-count {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #6A6A6A;
+}
+
+.mw-fp__product-price {
+  font-family: var(--font-body--family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #001237;
+  margin: 0;
+}
+
+.mw-fp__description {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.mw-fp__description-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mw-fp__feature-heading {
+  margin: 0;
+}
+
+.mw-fp__feature-text {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #001237;
+  margin: 0;
+}
+
+/* Desktop: show description as overlay on lifestyle image */
+@media screen and (min-width: 750px) {
+  .mw-fp__grid {
+    position: relative;
+  }
+
+  .mw-fp__description {
+    display: flex;
+    position: absolute;
+    right: 340px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 350px;
+    padding: 24px 32px;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .mw-fp__grid {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .mw-fp__lifestyle-img {
+    aspect-ratio: 375 / 280;
+  }
+
+  .mw-fp__product-img {
+    aspect-ratio: 1 / 1.5;
+  }
+
+  .mw-fp__description {
+    display: flex;
+    padding: 24px 0;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.mw_featured_product",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "lifestyle_image",
+      "label": "Lifestyle image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "product_title",
+      "label": "Product title",
+      "default": "Tech Linen Half-Zip"
+    },
+    {
+      "type": "text",
+      "id": "product_colors",
+      "label": "Colors text",
+      "default": "2 colors available"
+    },
+    {
+      "type": "text",
+      "id": "product_rating",
+      "label": "Rating count",
+      "default": "2181"
+    },
+    {
+      "type": "text",
+      "id": "product_price",
+      "label": "Price",
+      "default": "$40"
+    },
+    {
+      "type": "text",
+      "id": "feature_heading",
+      "label": "Feature heading",
+      "default": "New Tech Linen"
+    },
+    {
+      "type": "textarea",
+      "id": "feature_description",
+      "label": "Feature description",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing eli"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.mw_featured_product"
+    }
+  ]
+}
+{% endschema %}

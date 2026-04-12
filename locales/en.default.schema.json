@@ -434,7 +434,18 @@
     "video_section": "Video",
     "view_all_button": "View all",
     "pills": "Pills",
-    "comparison_slider": "Comparison slider"
+    "comparison_slider": "Comparison slider",
+    "custom_header": "Custom Header",
+    "custom_footer": "Custom Footer",
+    "mw_hero": "MW Hero",
+    "mw_shop_by": "Shop By",
+    "mw_shop_the_look": "Shop the Look",
+    "mw_value_props": "Value Props",
+    "mw_ugc_gallery": "UGC Gallery",
+    "mw_blog": "MW Blog",
+    "mw_reviews": "Reviews",
+    "mw_featured_product": "Featured Product",
+    "mw_campaign_banner": "Campaign Banner"
   },
   "options": {
     "above_carousel": "Above carousel",

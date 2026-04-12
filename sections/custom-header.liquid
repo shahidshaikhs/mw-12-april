@@ -1,0 +1,454 @@
+{% comment %}
+  Custom Header for Mack Weldon - matches Figma Desktop / Component / Nav (1440x105)
+  Two-row layout: utility links + logo + icons on top, main nav on bottom
+{% endcomment %}
+
+<header
+  class="custom-header"
+  style="
+    --header-bg: {{ section.settings.background_color }};
+    --header-nav-color: {{ section.settings.nav_color }};
+    --header-utility-color: {{ section.settings.utility_color }};
+    --header-sale-color: {{ section.settings.sale_color }};
+  "
+>
+  {%- comment -%} Desktop Header {%- endcomment -%}
+  <div class="custom-header__inner">
+    <div class="custom-header__row custom-header__row--top">
+      <div class="custom-header__utility-left">
+        {% for block in section.blocks %}
+          {% if block.type == 'utility-link' %}
+            <a href="{{ block.settings.url }}" class="custom-header__utility-link" {{ block.shopify_attributes }}>
+              {{ block.settings.label | escape }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="custom-header__logo">
+        <a href="/" class="custom-header__logo-link" aria-label="{{ shop.name }}">
+          <img
+            src="{{ 'shape-2.svg' | asset_url }}"
+            alt="{{ shop.name }}"
+            width="197"
+            height="18"
+            loading="eager"
+          >
+        </a>
+      </div>
+
+      <div class="custom-header__actions">
+        <a href="/search" class="custom-header__action-link" aria-label="{{ 'general.search.search' | t }}">
+          <span class="custom-header__action-icon">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <circle cx="6" cy="6" r="5.5" stroke="#555555" stroke-width="1"/>
+              <line x1="10" y1="10" x2="14" y2="14" stroke="#555555" stroke-width="1"/>
+            </svg>
+          </span>
+          <span class="custom-header__action-text">Search</span>
+        </a>
+        <a href="/account" class="custom-header__action-link" aria-label="Account">
+          <span class="custom-header__action-icon">
+            <img src="{{ 'icons-16x16-profile.svg' | asset_url }}" alt="" width="15" height="15" aria-hidden="true">
+          </span>
+          <span class="custom-header__action-text">Account</span>
+        </a>
+        <a href="/cart" class="custom-header__action-link" aria-label="Cart">
+          <span class="custom-header__action-icon">
+            <img src="{{ 'icons-16x16-bag.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true">
+          </span>
+          <span class="custom-header__action-text">Bag</span>
+        </a>
+      </div>
+    </div>
+
+    <nav class="custom-header__nav" aria-label="Main navigation">
+      <ul class="custom-header__nav-list">
+        {%- assign menu = section.settings.menu -%}
+        {%- for link in linklists[menu].links -%}
+          <li class="custom-header__nav-item">
+            <a
+              href="{{ link.url }}"
+              class="custom-header__nav-link{% if link.title == 'Sale' %} custom-header__nav-link--sale{% endif %}"
+              {% if link.current %} aria-current="page"{% endif %}
+            >
+              {{ link.title | escape }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
+
+  {%- comment -%} Mobile Header {%- endcomment -%}
+  <div class="custom-header__mobile">
+    <button
+      class="custom-header__mobile-menu-btn"
+      aria-label="Open navigation menu"
+      aria-haspopup="dialog"
+      type="button"
+      onclick="document.getElementById('mw-mobile-nav').showModal()"
+    >
+      <img src="{{ 'icons-16x16-menu.svg' | asset_url }}" alt="" width="20" height="20" aria-hidden="true">
+    </button>
+
+    <a href="/" class="custom-header__logo-link" aria-label="{{ shop.name }}">
+      <img
+        src="{{ 'shape-2.svg' | asset_url }}"
+        alt="{{ shop.name }}"
+        width="131"
+        height="12"
+        loading="eager"
+      >
+    </a>
+
+    <a href="/cart" class="custom-header__action-link" aria-label="Cart">
+      <img src="{{ 'icons-16x16-bag.svg' | asset_url }}" alt="" width="18" height="18" aria-hidden="true">
+    </a>
+  </div>
+
+  {%- comment -%} Mobile Navigation Drawer {%- endcomment -%}
+  <dialog id="mw-mobile-nav" class="custom-header__drawer" aria-label="Navigation menu">
+    <div class="custom-header__drawer-inner">
+      <div class="custom-header__drawer-top">
+        <button
+          class="custom-header__drawer-close"
+          aria-label="Close navigation menu"
+          type="button"
+          onclick="document.getElementById('mw-mobile-nav').close()"
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <line x1="2" y1="2" x2="18" y2="18" stroke="#001237" stroke-width="1.5"/>
+            <line x1="18" y1="2" x2="2" y2="18" stroke="#001237" stroke-width="1.5"/>
+          </svg>
+        </button>
+      </div>
+      <nav aria-label="Mobile navigation">
+        <ul class="custom-header__drawer-nav">
+          {%- for link in linklists[menu].links -%}
+            <li class="custom-header__drawer-nav-item">
+              <a
+                href="{{ link.url }}"
+                class="custom-header__drawer-nav-link{% if link.title == 'Sale' %} custom-header__drawer-nav-link--sale{% endif %}"
+                {% if link.current %} aria-current="page"{% endif %}
+              >
+                {{ link.title | escape }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+      <div class="custom-header__drawer-utility">
+        {% for block in section.blocks %}
+          {% if block.type == 'utility-link' %}
+            <a href="{{ block.settings.url }}" class="custom-header__drawer-utility-link">
+              {{ block.settings.label | escape }}
+            </a>
+          {% endif %}
+        {% endfor %}
+        <a href="/account" class="custom-header__drawer-utility-link">Account</a>
+      </div>
+    </div>
+  </dialog>
+</header>
+
+{% stylesheet %}
+.custom-header {
+  --header-gap: 32px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--header-bg, #FFFFFF);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.custom-header__inner {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 56px;
+}
+
+.custom-header__row--top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 16px;
+}
+
+.custom-header__utility-left {
+  display: flex;
+  gap: 16px;
+}
+
+.custom-header__utility-link {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--header-utility-color, #6A6A6A);
+  text-decoration: none;
+}
+
+.custom-header__utility-link:hover {
+  text-decoration: underline;
+}
+
+.custom-header__logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.custom-header__logo-link {
+  display: block;
+  text-decoration: none;
+}
+
+.custom-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.custom-header__action-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--header-utility-color, #6A6A6A);
+  text-decoration: none;
+}
+
+.custom-header__action-link:hover {
+  text-decoration: underline;
+}
+
+.custom-header__action-icon {
+  display: flex;
+  align-items: center;
+}
+
+.custom-header__nav {
+  display: flex;
+  justify-content: center;
+  padding-block-end: 16px;
+}
+
+.custom-header__nav-list {
+  display: flex;
+  gap: var(--header-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-header__nav-link {
+  font-family: var(--font-body--family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: var(--header-nav-color, #001237);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.custom-header__nav-link:hover {
+  text-decoration: underline;
+}
+
+.custom-header__nav-link--sale {
+  color: var(--header-sale-color, #0074E0);
+}
+
+/* Mobile */
+.custom-header__mobile {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.custom-header__mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Drawer */
+.custom-header__drawer {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: var(--mw-white, #FFFFFF);
+}
+
+.custom-header__drawer[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-header__drawer::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.custom-header__drawer-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  height: 100%;
+}
+
+.custom-header__drawer-top {
+  display: flex;
+  justify-content: flex-end;
+  padding-block-end: 24px;
+}
+
+.custom-header__drawer-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.custom-header__drawer-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.custom-header__drawer-nav-link {
+  font-family: var(--font-body--family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  color: var(--mw-navy, #001237);
+  text-decoration: none;
+}
+
+.custom-header__drawer-nav-link--sale {
+  color: var(--mw-blue, #0074E0);
+}
+
+.custom-header__drawer-utility {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-block-start: auto;
+  padding-block-start: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.custom-header__drawer-utility-link {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--mw-gray, #6A6A6A);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 749px) {
+  .custom-header__inner {
+    display: none;
+  }
+
+  .custom-header__mobile {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .custom-header__drawer {
+    display: none;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.custom_header",
+  "tag": "div",
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Main menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "nav_color",
+      "label": "Nav color",
+      "default": "#001237"
+    },
+    {
+      "type": "color",
+      "id": "utility_color",
+      "label": "Utility color",
+      "default": "#6A6A6A"
+    },
+    {
+      "type": "color",
+      "id": "sale_color",
+      "label": "Sale color",
+      "default": "#0074E0"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "utility-link",
+      "name": "Utility link",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Link"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "groups": ["header"]
+  }
+}
+{% endschema %}

@@ -1,0 +1,317 @@
+{% comment %}
+  MW Shop the Look - Figma Desktop / Spotlight / Shop the Look (1128x594)
+  Three outfit images with hotspot dots and product tooltips
+{% endcomment %}
+
+<section class="mw-stl">
+  <div class="mw-stl__container">
+    {% if section.settings.heading != blank %}
+      <h2 class="mw-stl__heading mw-heading mw-heading--sm">
+        {{ section.settings.heading | escape }}
+      </h2>
+    {% endif %}
+
+    <div class="mw-stl__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'outfit' %}
+          <div class="mw-stl__outfit" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              <div class="mw-stl__image-wrap">
+                {{
+                  block.settings.image
+                  | image_url: width: block.settings.image.width
+                  | image_tag:
+                    sizes: '(min-width: 750px) 364px, 312px',
+                    widths: '312,364,624,728',
+                    loading: 'lazy',
+                    class: 'mw-stl__img',
+                    alt: block.settings.image.alt
+                }}
+
+                {%- comment -%} Hotspot 1 {%- endcomment -%}
+                {% if block.settings.hotspot_1_product != blank %}
+                  <button
+                    class="mw-stl__dot"
+                    style="top: {{ block.settings.hotspot_1_y }}%; left: {{ block.settings.hotspot_1_x }}%;"
+                    aria-label="View {{ block.settings.hotspot_1_product | escape }}"
+                    type="button"
+                  >
+                    <span class="mw-stl__dot-inner"></span>
+                  </button>
+                  <div class="mw-stl__tooltip" style="top: calc({{ block.settings.hotspot_1_y }}% + 20px); left: {{ block.settings.hotspot_1_x }}%;">
+                    <a href="{{ block.settings.hotspot_1_url }}" class="mw-stl__tooltip-title">{{ block.settings.hotspot_1_product | escape }}</a>
+                    {% if block.settings.hotspot_1_colors != blank %}
+                      <span class="mw-stl__tooltip-meta">{{ block.settings.hotspot_1_colors | escape }}</span>
+                    {% endif %}
+                    {% if block.settings.hotspot_1_price != blank %}
+                      <span class="mw-stl__tooltip-price">{{ block.settings.hotspot_1_price | escape }}</span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                {%- comment -%} Hotspot 2 {%- endcomment -%}
+                {% if block.settings.hotspot_2_product != blank %}
+                  <button
+                    class="mw-stl__dot"
+                    style="top: {{ block.settings.hotspot_2_y }}%; left: {{ block.settings.hotspot_2_x }}%;"
+                    aria-label="View {{ block.settings.hotspot_2_product | escape }}"
+                    type="button"
+                  >
+                    <span class="mw-stl__dot-inner"></span>
+                  </button>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+.mw-stl {
+  padding-block: 48px;
+}
+
+.mw-stl__container {
+  max-width: 1128px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.mw-stl__heading {
+  margin: 0 0 24px;
+}
+
+.mw-stl__grid {
+  display: flex;
+  gap: 16px;
+}
+
+.mw-stl__outfit {
+  flex: 1;
+}
+
+.mw-stl__image-wrap {
+  position: relative;
+  overflow: visible;
+}
+
+.mw-stl__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 364 / 546;
+  object-fit: cover;
+}
+
+.mw-stl__dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  transform: translate(-50%, -50%);
+  padding: 0;
+  z-index: 2;
+}
+
+.mw-stl__dot-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+.mw-stl__tooltip {
+  display: none;
+  position: absolute;
+  background: #FFFFFF;
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+  min-width: 145px;
+  transform: translateX(-50%);
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mw-stl__dot:hover + .mw-stl__tooltip,
+.mw-stl__dot:focus + .mw-stl__tooltip {
+  display: flex;
+}
+
+.mw-stl__tooltip-title {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #001237;
+  text-decoration: underline;
+}
+
+.mw-stl__tooltip-meta {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #6A6A6A;
+}
+
+.mw-stl__tooltip-price {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #6A6A6A;
+}
+
+@media screen and (max-width: 749px) {
+  .mw-stl__heading {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.12px;
+  }
+
+  .mw-stl__grid {
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 14px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mw-stl__grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mw-stl__outfit {
+    flex: 0 0 312px;
+  }
+
+  .mw-stl__img {
+    aspect-ratio: 312 / 468;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.mw_shop_the_look",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "SHOP THE LOOK"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "outfit",
+      "name": "Outfit",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "header",
+          "content": "Hotspot 1"
+        },
+        {
+          "type": "text",
+          "id": "hotspot_1_product",
+          "label": "Product name"
+        },
+        {
+          "type": "url",
+          "id": "hotspot_1_url",
+          "label": "Product URL"
+        },
+        {
+          "type": "text",
+          "id": "hotspot_1_colors",
+          "label": "Colors text",
+          "default": "2 Colors Available"
+        },
+        {
+          "type": "text",
+          "id": "hotspot_1_price",
+          "label": "Price",
+          "default": "$200"
+        },
+        {
+          "type": "number",
+          "id": "hotspot_1_x",
+          "label": "X position (%)",
+          "default": 50
+        },
+        {
+          "type": "number",
+          "id": "hotspot_1_y",
+          "label": "Y position (%)",
+          "default": 30
+        },
+        {
+          "type": "header",
+          "content": "Hotspot 2"
+        },
+        {
+          "type": "text",
+          "id": "hotspot_2_product",
+          "label": "Product name"
+        },
+        {
+          "type": "url",
+          "id": "hotspot_2_url",
+          "label": "Product URL"
+        },
+        {
+          "type": "number",
+          "id": "hotspot_2_x",
+          "label": "X position (%)",
+          "default": 50
+        },
+        {
+          "type": "number",
+          "id": "hotspot_2_y",
+          "label": "Y position (%)",
+          "default": 70
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.mw_shop_the_look",
+      "blocks": [
+        {
+          "type": "outfit",
+          "settings": {
+            "hotspot_1_product": "Tech Linen Half-Zip",
+            "hotspot_1_colors": "2 Colors Available",
+            "hotspot_1_price": "$200",
+            "hotspot_1_x": 40,
+            "hotspot_1_y": 25
+          }
+        },
+        {
+          "type": "outfit"
+        },
+        {
+          "type": "outfit"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

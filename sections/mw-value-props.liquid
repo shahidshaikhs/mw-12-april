@@ -1,0 +1,268 @@
+{% comment %}
+  MW Value Props - Figma Desktop / Slice / Value Prop (1440x145)
+  Dark navy bar with 3 icon+text value propositions
+{% endcomment %}
+
+<section class="mw-value-props" style="background-color: {{ section.settings.background_color }};">
+  <div class="mw-value-props__container">
+    <div class="mw-value-props__track">
+      {% for block in section.blocks %}
+        {% if block.type == 'value-prop' %}
+          <div class="mw-value-props__item" {{ block.shopify_attributes }}>
+            <div class="mw-value-props__icon">
+              {% if block.settings.icon_image != blank %}
+                <img
+                  src="{{ block.settings.icon_image | image_url: width: 65 }}"
+                  alt=""
+                  width="65"
+                  height="65"
+                  loading="lazy"
+                  aria-hidden="true"
+                >
+              {% elsif block.settings.icon_svg != blank %}
+                <img
+                  src="{{ block.settings.icon_svg | asset_url }}"
+                  alt=""
+                  width="65"
+                  height="65"
+                  loading="lazy"
+                  aria-hidden="true"
+                >
+              {% endif %}
+            </div>
+            <div class="mw-value-props__text">
+              {% if block.settings.title != blank %}
+                <h3 class="mw-value-props__title">{{ block.settings.title | escape }}</h3>
+              {% endif %}
+              {% if block.settings.description != blank %}
+                <p class="mw-value-props__desc">{{ block.settings.description | escape }}</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+      {%- comment -%} Duplicate for mobile marquee {%- endcomment -%}
+      {% for block in section.blocks %}
+        {% if block.type == 'value-prop' %}
+          <div class="mw-value-props__item mw-value-props__item--clone" aria-hidden="true">
+            <div class="mw-value-props__icon">
+              {% if block.settings.icon_image != blank %}
+                <img
+                  src="{{ block.settings.icon_image | image_url: width: 55 }}"
+                  alt=""
+                  width="55"
+                  height="55"
+                  loading="lazy"
+                >
+              {% elsif block.settings.icon_svg != blank %}
+                <img
+                  src="{{ block.settings.icon_svg | asset_url }}"
+                  alt=""
+                  width="55"
+                  height="55"
+                  loading="lazy"
+                >
+              {% endif %}
+            </div>
+            <div class="mw-value-props__text">
+              {% if block.settings.title != blank %}
+                <span class="mw-value-props__title">{{ block.settings.title | escape }}</span>
+              {% endif %}
+              {% if block.settings.description != blank %}
+                <span class="mw-value-props__desc">{{ block.settings.description | escape }}</span>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+.mw-value-props {
+  padding-block: 40px;
+  overflow: hidden;
+}
+
+.mw-value-props__container {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 56px;
+}
+
+.mw-value-props__track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+}
+
+.mw-value-props__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.mw-value-props__item--clone {
+  display: none;
+}
+
+.mw-value-props__icon {
+  flex-shrink: 0;
+}
+
+.mw-value-props__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 224px;
+}
+
+.mw-value-props__title {
+  font-family: var(--font-body--family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.mw-value-props__desc {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .mw-value-props {
+    padding-block: 24px;
+  }
+
+  .mw-value-props__container {
+    padding-inline: 0;
+  }
+
+  .mw-value-props__track {
+    justify-content: flex-start;
+    gap: 48px;
+    animation: mw-vp-scroll 20s linear infinite;
+    width: max-content;
+  }
+
+  .mw-value-props__item--clone {
+    display: flex;
+  }
+
+  .mw-value-props__icon img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .mw-value-props__title {
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .mw-value-props__desc {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  .mw-value-props__text {
+    max-width: 200px;
+  }
+}
+
+@keyframes mw-vp-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mw-value-props__track {
+    animation: none;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.mw_value_props",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#001237"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value-prop",
+      "name": "Value prop",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon image"
+        },
+        {
+          "type": "text",
+          "id": "icon_svg",
+          "label": "Icon SVG filename"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Value Proposition"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Description text goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.mw_value_props",
+      "blocks": [
+        {
+          "type": "value-prop",
+          "settings": {
+            "icon_svg": "icons-try-on-guarantee-4.svg",
+            "title": "Try On Guarantee",
+            "description": "If you don't love your first pair of underwear, it's on us."
+          }
+        },
+        {
+          "type": "value-prop",
+          "settings": {
+            "icon_svg": "icons-try-on-guarantee-5.svg",
+            "title": "First Order Discount",
+            "description": "Save 20% on your first purchase."
+          }
+        },
+        {
+          "type": "value-prop",
+          "settings": {
+            "icon_svg": "icons-try-on-guarantee-6.svg",
+            "title": "Mack Weldon Rewards",
+            "description": "Stack up loyalty points and put them toward your next order."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,243 @@
+{% comment %}
+  MW Hero - Figma Desktop / Slice / Hero (1440x614)
+  Diptych layout: two images side by side with gradient overlay and centered text
+{% endcomment %}
+
+<section class="mw-hero">
+  {%- comment -%} Desktop Diptych {%- endcomment -%}
+  <div class="mw-hero__diptych">
+    <div class="mw-hero__image-left">
+      {% if section.settings.image_left != blank %}
+        {{
+          section.settings.image_left
+          | image_url: width: section.settings.image_left.width
+          | image_tag:
+            sizes: '50vw',
+            widths: '375,720,1000,1440',
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'mw-hero__img',
+            alt: section.settings.image_left.alt
+        }}
+      {% endif %}
+    </div>
+    <div class="mw-hero__image-right">
+      {% if section.settings.image_right != blank %}
+        {{
+          section.settings.image_right
+          | image_url: width: section.settings.image_right.width
+          | image_tag:
+            sizes: '50vw',
+            widths: '375,720,1000,1440',
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'mw-hero__img',
+            alt: section.settings.image_right.alt
+        }}
+      {% endif %}
+      <div class="mw-hero__gradient"></div>
+    </div>
+  </div>
+
+  {%- comment -%} Mobile Single Image {%- endcomment -%}
+  <div class="mw-hero__mobile-image">
+    {% if section.settings.image_left != blank %}
+      {{
+        section.settings.image_left
+        | image_url: width: section.settings.image_left.width
+        | image_tag:
+          sizes: '100vw',
+          widths: '375,550,750',
+          loading: 'eager',
+          fetchpriority: 'high',
+          class: 'mw-hero__img',
+          alt: section.settings.image_left.alt
+      }}
+    {% endif %}
+    <div class="mw-hero__mobile-overlay"></div>
+  </div>
+
+  {%- comment -%} Content Overlay {%- endcomment -%}
+  <div class="mw-hero__content">
+    <div class="mw-hero__text-group">
+      {% if section.settings.heading != blank %}
+        <h1 class="mw-hero__heading mw-heading mw-heading--xl" style="color: #FFFFFF;">
+          {{ section.settings.heading | escape }}
+        </h1>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p class="mw-hero__subheading">
+          {{ section.settings.subheading | escape }}
+        </p>
+      {% endif %}
+    </div>
+    {% if section.settings.button_text != blank %}
+      <div class="mw-hero__cta">
+        <a href="{{ section.settings.button_url }}" class="mw-btn">
+          {{ section.settings.button_text | escape }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% stylesheet %}
+.mw-hero {
+  position: relative;
+  width: 100%;
+  height: 614px;
+  overflow: hidden;
+}
+
+.mw-hero__diptych {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.mw-hero__image-left,
+.mw-hero__image-right {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+.mw-hero__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mw-hero__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(270deg, rgba(94, 100, 100, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  pointer-events: none;
+}
+
+.mw-hero__mobile-image {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.mw-hero__mobile-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+}
+
+.mw-hero__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 56px;
+  text-align: center;
+  z-index: 1;
+}
+
+.mw-hero__text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  max-width: 740px;
+}
+
+.mw-hero__heading {
+  margin: 0;
+}
+
+.mw-hero__subheading {
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .mw-hero {
+    height: 562px;
+  }
+
+  .mw-hero__diptych {
+    display: none;
+  }
+
+  .mw-hero__mobile-image {
+    display: block;
+  }
+
+  .mw-hero__content {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .mw-hero__heading {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: 0.24px;
+  }
+
+  .mw-hero__subheading {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.mw_hero",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Left image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_right",
+      "label": "Right image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "THE POLO SHOP IS OPEN"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "A dedicated shopping experience for all your polo-related needs."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:names.mw_hero"
+    }
+  ]
+}
+{% endschema %}

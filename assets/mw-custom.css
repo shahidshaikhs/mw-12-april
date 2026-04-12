@@ -1,0 +1,156 @@
+/* ==========================================================================
+   Mack Weldon Custom Styles
+   ========================================================================== */
+
+:root {
+  --mw-navy: #001237;
+  --mw-blue: #0074E0;
+  --mw-dark: #2D2D2D;
+  --mw-gray: #6A6A6A;
+  --mw-light-gray: #F7F7F7;
+  --mw-white: #FFFFFF;
+  --mw-max-width-lg: 1312px;
+  --mw-max-width-md: 1128px;
+  --mw-max-width-sm: 1186px;
+}
+
+/* Shared Button Styles */
+.mw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-block: 12px;
+  padding-inline: 70px;
+  font-family: var(--font-body--family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0;
+  border: 2px solid var(--mw-white);
+  background: transparent;
+  color: var(--mw-white);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mw-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mw-btn--blur {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.mw-btn--navy {
+  border-color: var(--mw-navy);
+  color: var(--mw-navy);
+  background: var(--mw-white);
+}
+
+.mw-btn--navy:hover {
+  background: var(--mw-light-gray);
+}
+
+/* Section Container */
+.mw-section-container {
+  max-width: var(--mw-max-width-lg);
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.mw-section-container--md {
+  max-width: var(--mw-max-width-md);
+}
+
+.mw-section-container--full {
+  max-width: 100%;
+  padding-inline: 0;
+}
+
+/* Typography */
+.mw-heading {
+  font-family: var(--font-heading--family);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--mw-navy);
+  letter-spacing: 0.18px;
+  margin: 0;
+}
+
+.mw-heading--xl {
+  font-size: 72px;
+  line-height: 96px;
+  letter-spacing: 0.36px;
+}
+
+.mw-heading--lg {
+  font-size: 56px;
+  line-height: 60px;
+  letter-spacing: 0.28px;
+}
+
+.mw-heading--md {
+  font-size: 48px;
+  line-height: 52px;
+  letter-spacing: 0.24px;
+}
+
+.mw-heading--sm {
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0.18px;
+}
+
+.mw-heading--xs {
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.12px;
+}
+
+/* Responsive */
+@media screen and (max-width: 749px) {
+  .mw-heading--xl {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: 0.24px;
+  }
+
+  .mw-heading--lg {
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: 0.18px;
+  }
+
+  .mw-heading--md {
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: 0.18px;
+  }
+
+  .mw-heading--sm {
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.12px;
+  }
+
+  .mw-btn {
+    padding-inline: 40px;
+  }
+}
+
+/* Utility: visually hidden */
+.mw-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

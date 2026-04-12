@@ -1,0 +1,40 @@
+<style>
+  @font-face {
+    font-family: 'National 2 Condensed';
+    src: url({{ 'national-2-condensed-500.woff2' | asset_url }}) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Untitled Sans';
+    src: url({{ 'untitled-sans-regular.woff2' | asset_url }}) format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Untitled Sans';
+    src: url({{ 'untitled-sans-medium.woff2' | asset_url }}) format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --font-heading--family: 'National 2 Condensed', var(--font-heading--fallback, sans-serif);
+    --font-heading--weight: 500;
+    --font-heading--style: normal;
+    --font-subheading--family: 'National 2 Condensed', var(--font-subheading--fallback, sans-serif);
+    --font-subheading--weight: 500;
+    --font-subheading--style: normal;
+    --font-body--family: 'Untitled Sans', var(--font-body--fallback, sans-serif);
+    --font-body--weight: 400;
+    --font-body--style: normal;
+    --font-accent--family: 'Untitled Sans', var(--font-accent--fallback, sans-serif);
+    --font-accent--weight: 500;
+    --font-accent--style: normal;
+  }
+</style>

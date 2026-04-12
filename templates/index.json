@@ -1,288 +1,279 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
- {
+{
   "sections": {
-    "hero_jVaWmY": {
-      "type": "hero",
+    "mw_hero": {
+      "type": "mw-hero",
+      "settings": {
+        "heading": "THE POLO SHOP IS OPEN",
+        "subheading": "A dedicated shopping experience for all your polo-related needs.",
+        "button_text": "SHOP NOW",
+        "image_left": "shopify://shop_images/figma-hero-left.jpg",
+        "image_right": "shopify://shop_images/figma-hero-right.jpg"
+      }
+    },
+    "mw_shop_by": {
+      "type": "mw-shop-by",
+      "settings": {
+        "heading": "SHOP BY"
+      },
       "blocks": {
-        "text_YLPk4p": {
-          "type": "text",
-          "name": "t:names.heading",
+        "tab_categories": {
+          "type": "tab",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground-heading)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "tab_name": "Categories",
+            "category_label_1": "Tops",
+            "category_image_1": "shopify://shop_images/figma-shop-by-tops.jpg",
+            "category_label_2": "Bundles",
+            "category_image_2": "shopify://shop_images/figma-shop-by-bundles.jpg",
+            "category_label_3": "Bottoms",
+            "category_image_3": "shopify://shop_images/figma-shop-by-bottoms.jpg",
+            "category_label_4": "Underwear",
+            "category_image_4": "shopify://shop_images/figma-shop-by-underwear.jpg",
+            "category_label_5": "Accessories",
+            "category_image_5": "shopify://shop_images/figma-shop-by-accessories.jpg"
+          }
         },
-        "button_H9gpTf": {
-          "type": "button",
-          "name": "t:names.button",
+        "tab_new_arrivals": {
+          "type": "tab",
           "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button-secondary",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
+            "tab_name": "New Arrivals",
+            "category_label_1": "New Tops",
+            "category_label_2": "New Bottoms",
+            "category_label_3": "New Underwear",
+            "category_label_4": "New Bundles",
+            "category_label_5": "New Accessories"
+          }
+        },
+        "tab_bestsellers": {
+          "type": "tab",
+          "settings": {
+            "tab_name": "Bestsellers",
+            "category_label_1": "Best Tops",
+            "category_label_2": "Best Bottoms",
+            "category_label_3": "Best Underwear",
+            "category_label_4": "Best Bundles",
+            "category_label_5": "Best Accessories"
+          }
         }
       },
       "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
-      ],
-      "name": "t:names.hero",
-      "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "link": "",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
-        "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "medium",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-6",
-        "toggle_overlay": true,
-        "overlay_color": "#12121266",
-        "overlay_style": "solid",
-        "gradient_direction": "to bottom",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 72
-      }
+        "tab_categories",
+        "tab_new_arrivals",
+        "tab_bestsellers"
+      ]
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
+    "mw_shop_the_look": {
+      "type": "mw-shop-the-look",
+      "settings": {
+        "heading": "SHOP THE LOOK"
+      },
       "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
+        "outfit_1": {
+          "type": "outfit",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
+            "image": "shopify://shop_images/figma-stl-outfit-1.jpg",
+            "hotspot_1_product": "Tech Linen Half-Zip",
+            "hotspot_1_colors": "2 Colors Available",
+            "hotspot_1_price": "$200",
+            "hotspot_1_x": 40,
+            "hotspot_1_y": 25,
+            "hotspot_2_product": "Tech Linen Pant",
+            "hotspot_2_x": 50,
+            "hotspot_2_y": 70
+          }
         },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
+        "outfit_2": {
+          "type": "outfit",
           "settings": {
-            "product_card_gap": 4,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
+            "image": "shopify://shop_images/figma-stl-outfit-2.jpg",
+            "hotspot_1_product": "SILVER Polo",
+            "hotspot_1_colors": "4 Colors Available",
+            "hotspot_1_price": "$78",
+            "hotspot_1_x": 45,
+            "hotspot_1_y": 30,
+            "hotspot_2_product": "Mavrick Tech Chino",
+            "hotspot_2_x": 55,
+            "hotspot_2_y": 65
+          }
+        },
+        "outfit_3": {
+          "type": "outfit",
+          "settings": {
+            "image": "shopify://shop_images/figma-stl-outfit-3.jpg",
+            "hotspot_1_product": "ACE Pullover Hoodie",
+            "hotspot_1_colors": "3 Colors Available",
+            "hotspot_1_price": "$98",
+            "hotspot_1_x": 50,
+            "hotspot_1_y": 25,
+            "hotspot_2_product": "ACE Sweatpant",
+            "hotspot_2_x": 45,
+            "hotspot_2_y": 68
+          }
         }
       },
-      "name": "t:names.featured_collection",
+      "block_order": [
+        "outfit_1",
+        "outfit_2",
+        "outfit_3"
+      ]
+    },
+    "mw_value_props": {
+      "type": "mw-value-props",
       "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "color_scheme": "scheme-1",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "background_color": "#001237"
+      },
+      "blocks": {
+        "prop_1": {
+          "type": "value-prop",
+          "settings": {
+            "icon_svg": "icons-try-on-guarantee-4.svg",
+            "title": "Try On Guarantee",
+            "description": "If you don't love your first pair of underwear, it's on us."
+          }
+        },
+        "prop_2": {
+          "type": "value-prop",
+          "settings": {
+            "icon_svg": "icons-try-on-guarantee-5.svg",
+            "title": "First Order Discount",
+            "description": "Save 20% on your first purchase."
+          }
+        },
+        "prop_3": {
+          "type": "value-prop",
+          "settings": {
+            "icon_svg": "icons-try-on-guarantee-6.svg",
+            "title": "Mack Weldon Rewards",
+            "description": "Stack up loyalty points and put them toward your next order."
+          }
+        }
+      },
+      "block_order": [
+        "prop_1",
+        "prop_2",
+        "prop_3"
+      ]
+    },
+    "mw_featured_product": {
+      "type": "mw-featured-product",
+      "settings": {
+        "product_title": "Tech Linen Half-Zip",
+        "product_colors": "2 colors available",
+        "product_rating": "2181",
+        "product_price": "$40",
+        "feature_heading": "New Tech Linen",
+        "feature_description": "Lorem ipsum dolor sit amet, consectetur adipiscing eli",
+        "button_text": "SHOP NOW",
+        "lifestyle_image": "shopify://shop_images/figma-fp-lifestyle.jpg",
+        "product_image": "shopify://shop_images/figma-fp-product.jpg"
       }
+    },
+    "mw_campaign_banner": {
+      "type": "mw-campaign-banner",
+      "settings": {
+        "heading": "pants campaign",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur .",
+        "button_1_text": "SHOP NOW",
+        "button_2_text": "CTA",
+        "background_image": "shopify://shop_images/figma-campaign-banner.jpg"
+      }
+    },
+    "mw_reviews": {
+      "type": "mw-reviews",
+      "settings": {
+        "heading": "what people say"
+      },
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "product_name": "ACE Pullover Hooded Sweatshirt",
+            "review_count": "40",
+            "review_text": "\"This is exactly what was described and what I was looking for...it washed and dried very well. My husband loves it!\"",
+            "reviewer_name": "Carol H."
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "product_name": "18-Hour Jersey Trunk",
+            "review_count": "40",
+            "review_text": "\"I love every single piece of clothing I buy from Mack and Weldon, especially the underwear.\"",
+            "reviewer_name": "Yanny F."
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2"
+      ]
+    },
+    "mw_blog": {
+      "type": "mw-blog",
+      "settings": {
+        "heading": "Mack Weldon Blog",
+        "view_all_text": "View All Articles",
+        "article_count": 3
+      }
+    },
+    "mw_ugc_gallery": {
+      "type": "mw-ugc-gallery",
+      "settings": {
+        "heading": "#wearitwell",
+        "instagram_handle": "@MackWeldon"
+      },
+      "blocks": {
+        "ugc_1": {
+          "type": "ugc-image",
+          "settings": {
+            "product_1_title": "SILVER Polo",
+            "image": "shopify://shop_images/figma-ugc-1.jpg"
+          }
+        },
+        "ugc_2": {
+          "type": "ugc-image",
+          "settings": {
+            "product_1_title": "SILVER Polo",
+            "image": "shopify://shop_images/figma-ugc-2.jpg"
+          }
+        },
+        "ugc_3": {
+          "type": "ugc-image",
+          "settings": {
+            "product_1_title": "Mavrick Tech Chino",
+            "image": "shopify://shop_images/figma-ugc-3.jpg"
+          }
+        },
+        "ugc_4": {
+          "type": "ugc-image",
+          "settings": {
+            "image": "shopify://shop_images/figma-ugc-4.jpg"
+          }
+        },
+        "ugc_5": {
+          "type": "ugc-image",
+          "settings": {
+            "image": "shopify://shop_images/figma-ugc-5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "ugc_1",
+        "ugc_2",
+        "ugc_3",
+        "ugc_4",
+        "ugc_5"
+      ]
     }
   },
   "order": [
-    "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "mw_hero",
+    "mw_shop_by",
+    "mw_shop_the_look",
+    "mw_value_props",
+    "mw_featured_product",
+    "mw_campaign_banner",
+    "mw_reviews",
+    "mw_blog",
+    "mw_ugc_gallery"
   ]
 }
