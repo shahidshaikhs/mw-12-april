@@ -3,7 +3,7 @@
   Title + tabs + scrollable category cards
 {% endcomment %}
 
-<section class="mw-shop-by">
+<mw-shop-by-tabs class="mw-shop-by">
   <div class="mw-shop-by__container">
     {% if section.settings.heading != blank %}
       <h2 class="mw-shop-by__heading mw-heading mw-heading--sm">
@@ -75,7 +75,7 @@
       {% endif %}
     {% endfor %}
   </div>
-</section>
+</mw-shop-by-tabs>
 
 {% javascript %}
 class MwShopByTabs extends HTMLElement {
@@ -255,7 +255,7 @@ customElements.define('mw-shop-by-tabs', MwShopByTabs);
 {% schema %}
 {
   "name": "t:names.mw_shop_by",
-  "tag": "mw-shop-by-tabs",
+  "tag": "div",
   "settings": [
     {
       "type": "text",

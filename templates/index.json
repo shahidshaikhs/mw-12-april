@@ -6,8 +6,8 @@
         "heading": "THE POLO SHOP IS OPEN",
         "subheading": "A dedicated shopping experience for all your polo-related needs.",
         "button_text": "SHOP NOW",
-        "image_left": "shopify://shop_images/figma-hero-left.jpg",
-        "image_right": "shopify://shop_images/figma-hero-right.jpg"
+        "image_left": "shopify://shop_images/image-left-desktop-design-I395425210016.png",
+        "image_right": "shopify://shop_images/image-right-desktop-design-I395425210017.png"
       }
     },
     "mw_shop_by": {
@@ -21,15 +21,15 @@
           "settings": {
             "tab_name": "Categories",
             "category_label_1": "Tops",
-            "category_image_1": "shopify://shop_images/figma-shop-by-tops.jpg",
+            "category_image_1": "shopify://shop_images/rectangle-516-desktop-design-I395520512344.png",
             "category_label_2": "Bundles",
-            "category_image_2": "shopify://shop_images/figma-shop-by-bundles.jpg",
+            "category_image_2": "shopify://shop_images/rectangle-516-desktop-design-I395520512347.png",
             "category_label_3": "Bottoms",
-            "category_image_3": "shopify://shop_images/figma-shop-by-bottoms.jpg",
+            "category_image_3": "shopify://shop_images/rectangle-516-desktop-design-I395520512350.png",
             "category_label_4": "Underwear",
-            "category_image_4": "shopify://shop_images/figma-shop-by-underwear.jpg",
+            "category_image_4": "shopify://shop_images/rectangle-516-desktop-design-I395520512353.png",
             "category_label_5": "Accessories",
-            "category_image_5": "shopify://shop_images/figma-shop-by-accessories.jpg"
+            "category_image_5": "shopify://shop_images/rectangle-516-desktop-design-I395520512356.png"
           }
         },
         "tab_new_arrivals": {
@@ -70,7 +70,7 @@
         "outfit_1": {
           "type": "outfit",
           "settings": {
-            "image": "shopify://shop_images/figma-stl-outfit-1.jpg",
+            "image": "shopify://shop_images/rectangle-522-desktop-design-I39561995556.png",
             "hotspot_1_product": "Tech Linen Half-Zip",
             "hotspot_1_colors": "2 Colors Available",
             "hotspot_1_price": "$200",
@@ -84,7 +84,7 @@
         "outfit_2": {
           "type": "outfit",
           "settings": {
-            "image": "shopify://shop_images/figma-stl-outfit-2.jpg",
+            "image": "shopify://shop_images/rectangle-523-desktop-design-I39561995557.png",
             "hotspot_1_product": "SILVER Polo",
             "hotspot_1_colors": "4 Colors Available",
             "hotspot_1_price": "$78",
@@ -98,7 +98,7 @@
         "outfit_3": {
           "type": "outfit",
           "settings": {
-            "image": "shopify://shop_images/figma-stl-outfit-3.jpg",
+            "image": "shopify://shop_images/rectangle-524-desktop-design-I39561995558.png",
             "hotspot_1_product": "ACE Pullover Hoodie",
             "hotspot_1_colors": "3 Colors Available",
             "hotspot_1_price": "$98",
@@ -125,7 +125,7 @@
         "prop_1": {
           "type": "value-prop",
           "settings": {
-            "icon_svg": "icons-try-on-guarantee-4.svg",
+            "icon_svg": "icons-try-on-guarantee.svg",
             "title": "Try On Guarantee",
             "description": "If you don't love your first pair of underwear, it's on us."
           }
@@ -133,7 +133,7 @@
         "prop_2": {
           "type": "value-prop",
           "settings": {
-            "icon_svg": "icons-try-on-guarantee-5.svg",
+            "icon_svg": "icons-try-on-guarantee-2.svg",
             "title": "First Order Discount",
             "description": "Save 20% on your first purchase."
           }
@@ -141,7 +141,7 @@
         "prop_3": {
           "type": "value-prop",
           "settings": {
-            "icon_svg": "icons-try-on-guarantee-6.svg",
+            "icon_svg": "icons-try-on-guarantee-3.svg",
             "title": "Mack Weldon Rewards",
             "description": "Stack up loyalty points and put them toward your next order."
           }
@@ -152,68 +152,6 @@
         "prop_2",
         "prop_3"
       ]
-    },
-    "mw_featured_product": {
-      "type": "mw-featured-product",
-      "settings": {
-        "product_title": "Tech Linen Half-Zip",
-        "product_colors": "2 colors available",
-        "product_rating": "2181",
-        "product_price": "$40",
-        "feature_heading": "New Tech Linen",
-        "feature_description": "Lorem ipsum dolor sit amet, consectetur adipiscing eli",
-        "button_text": "SHOP NOW",
-        "lifestyle_image": "shopify://shop_images/figma-fp-lifestyle.jpg",
-        "product_image": "shopify://shop_images/figma-fp-product.jpg"
-      }
-    },
-    "mw_campaign_banner": {
-      "type": "mw-campaign-banner",
-      "settings": {
-        "heading": "pants campaign",
-        "subheading": "Lorem ipsum dolor sit amet, consectetur .",
-        "button_1_text": "SHOP NOW",
-        "button_2_text": "CTA",
-        "background_image": "shopify://shop_images/figma-campaign-banner.jpg"
-      }
-    },
-    "mw_reviews": {
-      "type": "mw-reviews",
-      "settings": {
-        "heading": "what people say"
-      },
-      "blocks": {
-        "review_1": {
-          "type": "review",
-          "settings": {
-            "product_name": "ACE Pullover Hooded Sweatshirt",
-            "review_count": "40",
-            "review_text": "\"This is exactly what was described and what I was looking for...it washed and dried very well. My husband loves it!\"",
-            "reviewer_name": "Carol H."
-          }
-        },
-        "review_2": {
-          "type": "review",
-          "settings": {
-            "product_name": "18-Hour Jersey Trunk",
-            "review_count": "40",
-            "review_text": "\"I love every single piece of clothing I buy from Mack and Weldon, especially the underwear.\"",
-            "reviewer_name": "Yanny F."
-          }
-        }
-      },
-      "block_order": [
-        "review_1",
-        "review_2"
-      ]
-    },
-    "mw_blog": {
-      "type": "mw-blog",
-      "settings": {
-        "heading": "Mack Weldon Blog",
-        "view_all_text": "View All Articles",
-        "article_count": 3
-      }
     },
     "mw_ugc_gallery": {
       "type": "mw-ugc-gallery",
@@ -226,33 +164,33 @@
           "type": "ugc-image",
           "settings": {
             "product_1_title": "SILVER Polo",
-            "image": "shopify://shop_images/figma-ugc-1.jpg"
+            "image": "shopify://shop_images/rectangle-541-desktop-design-I39581995870.png"
           }
         },
         "ugc_2": {
           "type": "ugc-image",
           "settings": {
             "product_1_title": "SILVER Polo",
-            "image": "shopify://shop_images/figma-ugc-2.jpg"
+            "image": "shopify://shop_images/rectangle-541-desktop-design-I39581995873.png"
           }
         },
         "ugc_3": {
           "type": "ugc-image",
           "settings": {
             "product_1_title": "Mavrick Tech Chino",
-            "image": "shopify://shop_images/figma-ugc-3.jpg"
+            "image": "shopify://shop_images/rectangle-541-desktop-design-I39581995876.png"
           }
         },
         "ugc_4": {
           "type": "ugc-image",
           "settings": {
-            "image": "shopify://shop_images/figma-ugc-4.jpg"
+            "image": "shopify://shop_images/rectangle-541-desktop-design-I39581995879.png"
           }
         },
         "ugc_5": {
           "type": "ugc-image",
           "settings": {
-            "image": "shopify://shop_images/figma-ugc-5.jpg"
+            "image": "shopify://shop_images/rectangle-541-desktop-design-I39581995885.png"
           }
         }
       },
@@ -263,6 +201,70 @@
         "ugc_4",
         "ugc_5"
       ]
+    },
+    "mw_blog": {
+      "type": "mw-blog",
+      "settings": {
+        "heading": "Mack Weldon Blog",
+        "view_all_text": "View All Articles",
+        "article_count": 3
+      }
+    },
+    "mw_reviews": {
+      "type": "mw-reviews",
+      "settings": {
+        "heading": "what people say"
+      },
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "product_name": "ACE Pullover Hooded Sweatshirt",
+            "product_image": "shopify://shop_images/rectangle-545-desktop-design-I39602334756.png",
+            "review_count": "40",
+            "review_text": "\"This is exactly what was described and what I was looking for...it washed and dried very well. My husband loves it!\"",
+            "reviewer_name": "Carol H."
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "product_name": "18-Hour Jersey Trunk",
+            "product_image": "shopify://shop_images/rectangle-545-desktop-design-I39602677471.png",
+            "review_count": "40",
+            "review_text": "\"I love every single piece of clothing I buy from Mack and Weldon, especially the underwear.\"",
+            "reviewer_name": "Yanny F."
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2"
+      ]
+    },
+    "mw_featured_product": {
+      "type": "mw-featured-product",
+      "settings": {
+        "product_title": "Tech Linen Half-Zip",
+        "product_colors": "2 colors available",
+        "product_rating": "2181",
+        "product_price": "$40",
+        "feature_heading": "New Tech Linen",
+        "feature_description": "Lorem ipsum dolor sit amet, consectetur adipiscing eli",
+        "button_text": "SHOP NOW",
+        "lifestyle_image": "shopify://shop_images/rectangle-542-desktop-design-I396120511266.png",
+        "product_image": "shopify://shop_images/rectangle-499-desktop-design-I39612051127033261242.png"
+      }
+    },
+    "mw_campaign_banner": {
+      "type": "mw-campaign-banner",
+      "settings": {
+        "heading": "pants campaign",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur .",
+        "button_1_text": "SHOP NOW",
+        "button_2_text": "CTA",
+        "background_image": "shopify://shop_images/background-desktop-design-I39621996170.png"
+      }
     }
   },
   "order": [

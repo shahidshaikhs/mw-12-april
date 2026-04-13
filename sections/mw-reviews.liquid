@@ -3,7 +3,7 @@
   Customer reviews with product images and navigation arrows
 {% endcomment %}
 
-<section class="mw-reviews">
+<mw-reviews-carousel class="mw-reviews">
   <div class="mw-reviews__container">
     {% if section.settings.heading != blank %}
       <h2 class="mw-reviews__heading mw-heading mw-heading--sm">
@@ -71,7 +71,7 @@
       </button>
     </div>
   </div>
-</section>
+</mw-reviews-carousel>
 
 {% javascript %}
 class MwReviewsCarousel extends HTMLElement {
@@ -285,7 +285,7 @@ customElements.define('mw-reviews-carousel', MwReviewsCarousel);
 {% schema %}
 {
   "name": "t:names.mw_reviews",
-  "tag": "mw-reviews-carousel",
+  "tag": "div",
   "settings": [
     {
       "type": "text",
