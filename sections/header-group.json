@@ -47,29 +47,21 @@
         "utility_1": {
           "type": "utility-link",
           "settings": {
-            "label": "Store Locator",
+            "label": "Daily Wear Quiz",
             "url": ""
           }
         },
         "utility_2": {
           "type": "utility-link",
           "settings": {
-            "label": "Gift Cards",
-            "url": ""
-          }
-        },
-        "utility_3": {
-          "type": "utility-link",
-          "settings": {
-            "label": "Help",
+            "label": "Rewards",
             "url": ""
           }
         }
       },
       "block_order": [
         "utility_1",
-        "utility_2",
-        "utility_3"
+        "utility_2"
       ],
       "settings": {
         "menu": "main-menu",

@@ -270,10 +270,10 @@
     "mw_shop_by",
     "mw_shop_the_look",
     "mw_value_props",
-    "mw_featured_product",
-    "mw_campaign_banner",
-    "mw_reviews",
+    "mw_ugc_gallery",
     "mw_blog",
-    "mw_ugc_gallery"
+    "mw_reviews",
+    "mw_featured_product",
+    "mw_campaign_banner"
   ]
 }
