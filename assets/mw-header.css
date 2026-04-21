@@ -1,0 +1,180 @@
+/* ==============================================
+   Mack Weldon Header Overrides
+   ============================================== */
+
+/* ---- Container Width ---- */
+.header-section .header__columns,
+.header-section .header__navigation-bar-row {
+  max-width: 1128px;
+  margin-inline: auto;
+}
+
+/* ---- Utility Links (top row left) ---- */
+.mw-utility-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.mw-utility-links__link {
+  font-size: 14px;
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  color: #6A6A6A;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 19px;
+}
+
+.mw-utility-links__link:hover {
+  color: #001237;
+}
+
+@media screen and (max-width: 749px) {
+  .mw-utility-links {
+    display: none;
+  }
+}
+
+/* ---- Desktop Nav Link Overrides ---- */
+@media screen and (min-width: 750px) {
+  .header-menu .menu-list__link-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23px;
+    color: #001237;
+  }
+
+  .header-menu .overflow-menu::part(list) {
+    gap: 0;
+  }
+
+  .header-menu .menu-list__link-title {
+    padding-inline: 16px;
+  }
+}
+
+/* ---- Sale Link Color ---- */
+.menu-list__item--sale,
+.menu-list__item--sale .menu-list__link-title {
+  color: #0074E0;
+}
+
+.menu-list__item--sale .menu-list__link {
+  color: #0074E0;
+}
+
+.menu-list__item--sale .menu-list__link:hover,
+.menu-list__item--sale .menu-list__link:focus {
+  color: #0074E0;
+}
+
+/* ---- Header Action Labels (Search, Account, Bag) ---- */
+.mw-action-label {
+  font-size: 14px;
+  font-family: var(--font-body--family);
+  font-weight: 400;
+  color: #6A6A6A;
+  line-height: 19px;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 749px) {
+  .mw-action-label {
+    display: none;
+  }
+}
+
+/* ---- Cart Badge Count ---- */
+.mw-cart-badge {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+  color: #0074B8;
+}
+
+/* ---- Mobile Navigation Bar ---- */
+@media screen and (max-width: 749px) {
+  .menu-list--mobile .menu-list__item {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #001237;
+  }
+
+  .menu-list--mobile a {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #001237;
+  }
+}
+
+/* ---- Mobile Drawer Overrides ---- */
+.menu-drawer .menu-drawer__menu-item--mainlist {
+  min-height: 44px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #001237;
+}
+
+.menu-drawer .menu-drawer__menu-item--mainlist:hover {
+  color: #001237;
+}
+
+/* Drawer Sale link */
+.menu-drawer__menu-item--sale,
+.menu-drawer__menu-item--sale .menu-drawer__menu-item-text {
+  color: #0074E0;
+}
+
+/* Drawer chevron arrow for items with children */
+.menu-drawer .menu-drawer__menu-item--mainlist > .svg-wrapper.icon-caret {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+/* ---- Drawer Secondary Links ---- */
+.mw-drawer-secondary-links {
+  display: flex;
+  flex-direction: column;
+  padding-inline: var(--drawer-padding, 20px);
+  padding-block-start: 16px;
+}
+
+.mw-drawer-secondary-links__link {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #6A6A6A;
+  text-decoration: none;
+  font-family: var(--font-body--family);
+}
+
+.mw-drawer-secondary-links__link:hover {
+  color: #001237;
+}
+
+/* ---- Announcement Bar Text ---- */
+.header-announcements .announcement-bar__text,
+.header-announcements .announcement-bar__slides a {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: center;
+}
+
+/* ---- Search action with label ---- */
+@media screen and (min-width: 750px) {
+  .mw-search-action {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}

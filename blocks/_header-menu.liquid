@@ -37,7 +37,7 @@
                 <a
                   href="{{ link.url }}"
                   id="MenuItem-{{ link.handle }}"
-                  class="menu-list__item"
+                  class="menu-list__item{% if link.title == 'Sale' %} menu-list__item--sale{% endif %}"
                   {% if link.current %}
                     aria-current="page"
                   {% endif %}
@@ -89,7 +89,7 @@
           <a
             href="{{ link.url }}"
             data-skip-node-update="true"
-            class="menu-list__link{% if link.active %} menu-list__link--active{% endif %}"
+            class="menu-list__link{% if link.active %} menu-list__link--active{% endif %}{% if link.title == 'Sale' %} menu-list__link--sale{% endif %}"
             {%- if link.links != blank -%}
               aria-controls="submenu-{{ forloop.index }}"
               aria-haspopup="true"
@@ -664,6 +664,21 @@
   .mega-menu__submenu {
     /* preserves the inherited grid layout when this submenu wrapper is used */
     display: contents;
+  }
+
+  /* Sale link color */
+  .menu-list__link--sale,
+  .menu-list__link--sale .menu-list__link-title {
+    color: #0074E0;
+  }
+
+  .menu-list__link--sale:hover,
+  .menu-list__link--sale:focus {
+    color: #0074E0;
+  }
+
+  .menu-list__item--sale {
+    color: #0074E0;
   }
 {% endstylesheet %}
 

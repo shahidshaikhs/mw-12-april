@@ -235,7 +235,7 @@
                   <a
                     id="HeaderDrawer-{{ link.handle }}"
                     href="{{ link.url }}"
-                    class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset"
+                    class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset{% if link.title == 'Sale' %} menu-drawer__menu-item--sale{% endif %}"
                     {% if link.current %}
                       aria-current="page"
                     {% endif %}
@@ -552,7 +552,7 @@
                   <a
                     id="HeaderDrawer-{{ link.handle }}"
                     href="{{ link.url }}"
-                    class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset"
+                    class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset{% if link.title == 'Sale' %} menu-drawer__menu-item--sale{% endif %}"
                     {% if link.current %}
                       aria-current="page"
                     {% endif %}
@@ -565,6 +565,17 @@
           {% endif %}
         </ul>
       </nav>
+      {%- comment -%} MW Secondary links in drawer {%- endcomment -%}
+      {% if section.settings.secondary_menu != blank %}
+        <div class="mw-drawer-secondary-links">
+          {% for link in section.settings.secondary_menu.links %}
+            <a href="{{ link.url }}" class="mw-drawer-secondary-links__link">
+              {{ link.title | escape }}
+            </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+
       <div
         class="menu-drawer__utility-links menu-drawer__animated-element"
         style="--menu-drawer-animation-index: {{ linklist.links.size }};"

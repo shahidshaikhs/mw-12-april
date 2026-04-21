@@ -182,6 +182,13 @@
 %}
 
 {% capture localization_markup %}
+  {% if section.settings.utility_menu != blank %}
+    <nav class="mw-utility-links" aria-label="Utility navigation">
+      {% for link in section.settings.utility_menu.links %}
+        <a href="{{ link.url }}" class="mw-utility-links__link">{{ link.title | escape }}</a>
+      {% endfor %}
+    </nav>
+  {% endif %}
   {% liquid
     assign localization_font = '--menu-localization-font: var(--font-[localization_font]--family); ' | replace: '[localization_font]', section.settings.localization_font
     assign localization_font_size = '--menu-localization-font-size: [localization_font_size]; ' | replace: '[localization_font_size]', section.settings.localization_font_size
@@ -1198,6 +1205,20 @@
       "id": "customer_account_menu",
       "label": "t:settings.menu",
       "default": "customer-account-main-menu"
+    },
+    {
+      "type": "header",
+      "content": "t:content.custom_navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "utility_menu",
+      "label": "t:settings.utility_menu"
+    },
+    {
+      "type": "link_list",
+      "id": "secondary_menu",
+      "label": "t:settings.secondary_menu"
     },
     {
       "type": "header",

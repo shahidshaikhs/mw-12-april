@@ -237,7 +237,7 @@
       },
       "scheme-5": {
         "settings": {
-          "background": "#333333",
+          "background": "#001237",
           "foreground_heading": "#ffffff",
           "foreground": "#ffffff",
           "primary": "#ffffff",
@@ -515,7 +515,7 @@
         },
         "scheme-5": {
           "settings": {
-            "background": "#333333",
+            "background": "#001237",
             "foreground_heading": "#ffffff",
             "foreground": "#ffffff",
             "primary": "#ffffff",
