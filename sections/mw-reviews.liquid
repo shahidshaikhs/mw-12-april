@@ -277,7 +277,14 @@ customElements.define('mw-reviews-carousel', MwReviewsCarousel);
   }
 
   .mw-reviews__arrow {
-    display: none;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 4px;
+  }
+
+  .mw-reviews__arrow img {
+    width: 11px;
+    height: 19px;
   }
 }
 {% endstylesheet %}

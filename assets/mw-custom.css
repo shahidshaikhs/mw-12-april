@@ -66,6 +66,10 @@
   max-width: var(--mw-max-width-md);
 }
 
+.mw-section-container--lg {
+  max-width: var(--mw-max-width-lg);
+}
+
 .mw-section-container--full {
   max-width: 100%;
   padding-inline: 0;
