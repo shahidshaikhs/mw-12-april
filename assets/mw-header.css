@@ -86,7 +86,8 @@
 }
 
 /* ---- Cart Badge Count ---- */
-.mw-cart-badge {
+.header-actions__cart-icon .cart-bubble__text,
+.header-actions__cart-icon .cart-bubble__text-count {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 12px;
@@ -172,9 +173,27 @@
 
 /* ---- Search action with label ---- */
 @media screen and (min-width: 750px) {
-  .mw-search-action {
+  search-button {
     display: flex;
     align-items: center;
     gap: 4px;
+  }
+
+  .account-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  cart-drawer-component,
+  .header-actions__action:has(+ .mw-action-label) {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Ensure action + label pairs are grouped */
+  .header-actions__cart-icon {
+    display: flex;
+    align-items: center;
   }
 }
