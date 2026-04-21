@@ -5,7 +5,7 @@
 /* ---- Container Width ---- */
 .header-section .header__columns,
 .header-section .header__navigation-bar-row {
-  max-width: 1128px;
+  max-width: 1920px;
   margin-inline: auto;
 }
 
@@ -169,6 +169,13 @@
   font-weight: 400;
   line-height: 19px;
   text-align: center;
+}
+
+/* ---- Mobile Announcement Bar Padding ---- */
+@media screen and (max-width: 749px) {
+  .header-announcements .announcement-bar {
+    padding-block: 5px;
+  }
 }
 
 /* ---- Search action with label ---- */
