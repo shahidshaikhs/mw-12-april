@@ -6,8 +6,8 @@
         "heading": "THE POLO SHOP IS OPEN",
         "subheading": "A dedicated shopping experience for all your polo-related needs.",
         "button_text": "SHOP NOW",
-        "image_left": "shopify://shop_images/image-left-desktop-design-I395425210016.png",
-        "image_right": "shopify://shop_images/image-right-desktop-design-I395425210017.png"
+        "image_left": "shopify:\/\/shop_images\/image-left-desktop-design-I395425210016.png",
+        "image_right": "shopify:\/\/shop_images\/image-right-desktop-design-I395425210017.png"
       }
     },
     "mw_shop_by": {
@@ -21,15 +21,15 @@
           "settings": {
             "tab_name": "Categories",
             "category_label_1": "Tops",
-            "category_image_1": "shopify://shop_images/rectangle-516-desktop-design-I395520512344.png",
+            "category_image_1": "shopify:\/\/shop_images\/rectangle-516-desktop-design-I395520512344.png",
             "category_label_2": "Bundles",
-            "category_image_2": "shopify://shop_images/rectangle-516-desktop-design-I395520512347.png",
+            "category_image_2": "shopify:\/\/shop_images\/rectangle-516-desktop-design-I395520512347.png",
             "category_label_3": "Bottoms",
-            "category_image_3": "shopify://shop_images/rectangle-516-desktop-design-I395520512350.png",
+            "category_image_3": "shopify:\/\/shop_images\/rectangle-516-desktop-design-I395520512350.png",
             "category_label_4": "Underwear",
-            "category_image_4": "shopify://shop_images/rectangle-516-desktop-design-I395520512353.png",
+            "category_image_4": "shopify:\/\/shop_images\/rectangle-516-desktop-design-I395520512353.png",
             "category_label_5": "Accessories",
-            "category_image_5": "shopify://shop_images/rectangle-516-desktop-design-I395520512356.png"
+            "category_image_5": "shopify:\/\/shop_images\/rectangle-516-desktop-design-I395520512356.png"
           }
         },
         "tab_new_arrivals": {
@@ -70,7 +70,7 @@
         "outfit_1": {
           "type": "outfit",
           "settings": {
-            "image": "shopify://shop_images/rectangle-522-desktop-design-I39561995556.png",
+            "image": "shopify:\/\/shop_images\/rectangle-522-desktop-design-I39561995556.png",
             "hotspot_1_product": "Tech Linen Half-Zip",
             "hotspot_1_colors": "2 Colors Available",
             "hotspot_1_price": "$200",
@@ -84,7 +84,7 @@
         "outfit_2": {
           "type": "outfit",
           "settings": {
-            "image": "shopify://shop_images/rectangle-523-desktop-design-I39561995557.png",
+            "image": "shopify:\/\/shop_images\/rectangle-523-desktop-design-I39561995557.png",
             "hotspot_1_product": "SILVER Polo",
             "hotspot_1_colors": "4 Colors Available",
             "hotspot_1_price": "$78",
@@ -98,7 +98,7 @@
         "outfit_3": {
           "type": "outfit",
           "settings": {
-            "image": "shopify://shop_images/rectangle-524-desktop-design-I39561995558.png",
+            "image": "shopify:\/\/shop_images\/rectangle-524-desktop-design-I39561995558.png",
             "hotspot_1_product": "ACE Pullover Hoodie",
             "hotspot_1_colors": "3 Colors Available",
             "hotspot_1_price": "$98",
@@ -164,33 +164,33 @@
           "type": "ugc-image",
           "settings": {
             "product_1_title": "SILVER Polo",
-            "image": "shopify://shop_images/rectangle-541-desktop-design-I39581995870.png"
+            "image": "shopify:\/\/shop_images\/rectangle-541-desktop-design-I39581995870.png"
           }
         },
         "ugc_2": {
           "type": "ugc-image",
           "settings": {
             "product_1_title": "SILVER Polo",
-            "image": "shopify://shop_images/rectangle-541-desktop-design-I39581995873.png"
+            "image": "shopify:\/\/shop_images\/rectangle-541-desktop-design-I39581995873.png"
           }
         },
         "ugc_3": {
           "type": "ugc-image",
           "settings": {
             "product_1_title": "Mavrick Tech Chino",
-            "image": "shopify://shop_images/rectangle-541-desktop-design-I39581995876.png"
+            "image": "shopify:\/\/shop_images\/rectangle-541-desktop-design-I39581995876.png"
           }
         },
         "ugc_4": {
           "type": "ugc-image",
           "settings": {
-            "image": "shopify://shop_images/rectangle-541-desktop-design-I39581995879.png"
+            "image": "shopify:\/\/shop_images\/rectangle-541-desktop-design-I39581995879.png"
           }
         },
         "ugc_5": {
           "type": "ugc-image",
           "settings": {
-            "image": "shopify://shop_images/rectangle-541-desktop-design-I39581995885.png"
+            "image": "shopify:\/\/shop_images\/rectangle-541-desktop-design-I39581995885.png"
           }
         }
       },
@@ -220,7 +220,7 @@
           "type": "review",
           "settings": {
             "product_name": "ACE Pullover Hooded Sweatshirt",
-            "product_image": "shopify://shop_images/rectangle-545-desktop-design-I39602334756.png",
+            "product_image": "shopify:\/\/shop_images\/rectangle-545-desktop-design-I39602334756.png",
             "review_count": "40",
             "review_text": "\"This is exactly what was described and what I was looking for...it washed and dried very well. My husband loves it!\"",
             "reviewer_name": "Carol H."
@@ -230,7 +230,7 @@
           "type": "review",
           "settings": {
             "product_name": "18-Hour Jersey Trunk",
-            "product_image": "shopify://shop_images/rectangle-545-desktop-design-I39602677471.png",
+            "product_image": "shopify:\/\/shop_images\/rectangle-545-desktop-design-I39602677471.png",
             "review_count": "40",
             "review_text": "\"I love every single piece of clothing I buy from Mack and Weldon, especially the underwear.\"",
             "reviewer_name": "Yanny F."
@@ -252,8 +252,8 @@
         "feature_heading": "New Tech Linen",
         "feature_description": "Lorem ipsum dolor sit amet, consectetur adipiscing eli",
         "button_text": "SHOP NOW",
-        "lifestyle_image": "shopify://shop_images/rectangle-542-desktop-design-I396120511266.png",
-        "product_image": "shopify://shop_images/rectangle-499-desktop-design-I39612051127033261242.png"
+        "lifestyle_image": "shopify:\/\/shop_images\/rectangle-542-desktop-design-I396120511266.png",
+        "product_image": "shopify:\/\/shop_images\/rectangle-499-desktop-design-I39612051127033261242.png"
       }
     },
     "mw_campaign_banner": {
@@ -263,7 +263,7 @@
         "subheading": "Lorem ipsum dolor sit amet, consectetur .",
         "button_1_text": "SHOP NOW",
         "button_2_text": "CTA",
-        "background_image": "shopify://shop_images/background-desktop-design-I39621996170.png"
+        "background_image": "shopify:\/\/shop_images\/background-desktop-design-I39621996170.png"
       }
     }
   },
